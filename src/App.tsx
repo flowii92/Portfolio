@@ -626,7 +626,7 @@ function MobileNavItem({
       ].join(" ")}
     >
       <div className="flex items-center justify-between">
-        <span className="font-semibold">{label}</span>
+        <span className="font-semibold uppercase">{label}</span>
         <span
           className={[
             "h-2.5 w-2.5 rounded-full transition",
@@ -634,7 +634,6 @@ function MobileNavItem({
           ].join(" ")}
         />
       </div>
-      <p className="mt-1 text-xs text-white/50">#{id}</p>
     </button>
   );
 }
