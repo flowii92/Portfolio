@@ -104,13 +104,13 @@ export default function App() {
             <div className="p-6 flex flex-col h-full">
               {/* header */}
               <div className="flex items-center justify-between">
-                <p className="text-sm font-bold text-white/80">Navigation</p>
+                <p className="text-sm font-bold text-white/80">Menu</p>
                 <button
                   type="button"
                   onClick={closeMobile}
-                  className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/70 hover:bg-white/10 transition"
+                  className="rounded-lg border border-white/10 bg-white/15 px-3 py-1.5 text-xs font-semibold text-white/90 hover:text-red-500/90 hover:bg-white/10 transition"
                 >
-                  ESC
+                  X
                 </button>
               </div>
 
