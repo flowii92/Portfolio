@@ -167,7 +167,9 @@ export default function App() {
         <Container>
           <div className="relative flex items-center py-10">
             {/* LEFT (logo / vide pour l’instant) */}
-            <div className="flex items-center gap-3">{/* logo plus tard */}</div>
+            <div className="flex items-center gap-3">
+              {/* logo plus tard */}
+            </div>
 
             {/* CENTER NAV (desktop) */}
             <nav className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-2 backdrop-blur-xl">
@@ -546,7 +548,10 @@ export default function App() {
 
           {/* TIMELINE */}
           <div id="timeline" className="h-px scroll-mt-28" />
-          <Section title="Parcours" subtitle="Mon parcours scolaire + projets clés.">
+          <Section
+            title="Parcours"
+            subtitle="Mon parcours scolaire + projets clés."
+          >
             <Timeline />
           </Section>
 

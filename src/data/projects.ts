@@ -1,6 +1,7 @@
 import safediskImg from "../assets/hero.jpg";
 import simoneImg from "../assets/simone.jpg";
 import lefrankImg from "../assets/lefrank.jpg";
+import compteurImg from "../assets/compteur.jpg"
 
 export type Project = {
   title: string;
@@ -36,5 +37,13 @@ export const projects: Project[] = [
     tags: ["WordPress", "JavaScript", "Responsive"],
     links: [{ label: "Voir le site", href: "https://restaurantlefrank.fr" }],
     image: lefrankImg,
+  },
+  {
+    title: "Appli Compteur",
+    description:
+      "Mini projet React/TypeScript, compteur avec meilleur score",
+    tags: ["React", "TypeScript", "Responsive"],
+    links: [{ label: "Voir le site", href: "https://compteur-react-topaz.vercel.app" }],
+    image: compteurImg,
   },
 ];
