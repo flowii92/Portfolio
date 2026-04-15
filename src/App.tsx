@@ -31,7 +31,7 @@ export default function App() {
           .sort(
             (a, b) =>
               Math.abs(a.boundingClientRect.top) -
-              Math.abs(b.boundingClientRect.top)
+              Math.abs(b.boundingClientRect.top),
           )[0];
 
         if (hit) setActiveSection(hit.target.id);
@@ -39,7 +39,7 @@ export default function App() {
       {
         rootMargin: "-50% 0px -50% 0px",
         threshold: 0,
-      }
+      },
     );
 
     elements.forEach((el) => obs.observe(el));
@@ -280,7 +280,7 @@ export default function App() {
                   {/* bottom bar */}
                   <div className="flex items-center justify-between gap-4 border-t border-white/10 bg-black/30 px-5 py-4">
                     <p className="text-xs text-white/70">
-                      https://safedisk.dimyx.fr{" "}
+                      https://restoredata.fr{" "}
                       <span className="text-violet-300">•</span> Designé &
                       Developpé par Valentin MAREK
                     </p>

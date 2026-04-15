@@ -1,7 +1,7 @@
 import safediskImg from "../assets/hero.jpg";
 import simoneImg from "../assets/simone.jpg";
 import lefrankImg from "../assets/lefrank.jpg";
-import compteurImg from "../assets/compteur.jpg"
+import compteurImg from "../assets/compteur.jpg";
 
 export type Project = {
   title: string;
@@ -17,7 +17,7 @@ export const projects: Project[] = [
     description:
       "Site vitrine pour un service de récupération de données. Travail sur UI, structure et crédibilité.",
     tags: ["WordPress", "UI/UX", "Sécurité"],
-    links: [{ label: "Voir le site", href: "https://safedisk.dimyx.fr" }],
+    links: [{ label: "Voir le site", href: "https://restoredata.fr" }],
     image: safediskImg,
   },
   {
@@ -40,10 +40,14 @@ export const projects: Project[] = [
   },
   {
     title: "Appli Compteur",
-    description:
-      "Mini projet React/TypeScript, compteur avec meilleur score",
+    description: "Mini projet React/TypeScript, compteur avec meilleur score",
     tags: ["React", "TypeScript", "Responsive"],
-    links: [{ label: "Voir le site", href: "https://compteur-react-topaz.vercel.app" }],
+    links: [
+      {
+        label: "Voir le site",
+        href: "https://compteur-react-topaz.vercel.app",
+      },
+    ],
     image: compteurImg,
   },
 ];
