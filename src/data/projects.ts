@@ -33,7 +33,7 @@ export const projects: Project[] = [
   {
     title: "Restaurant Le Frank",
     description:
-      "Site haut de gamme (restaurant). Travail sur intégration, UI premium, animations et responsive (J'ai fais le développement pas le design).",
+      "Site haut de gamme (restaurant). Travail sur intégration, UI premium, animations et responsive (J'ai fait le développement pas le design).",
     tags: ["WordPress", "JavaScript", "Responsive"],
     links: [{ label: "Voir le site", href: "https://restaurantlefrank.fr" }],
     image: lefrankImg,
