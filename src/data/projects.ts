@@ -2,6 +2,8 @@ import safediskImg from "../assets/hero.jpg";
 import simoneImg from "../assets/simone.jpg";
 import lefrankImg from "../assets/lefrank.jpg";
 import compteurImg from "../assets/compteur.jpg";
+import iotImg from "../assets/iot.jpg";
+import infraImg from "../assets/infra.jpg";
 
 export type Project = {
   title: string;
@@ -13,9 +15,25 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Supervision / IoT",
+    description:
+      "Architecture globale pour la collecte et la remontée de données de capteurs en temps réel. Développement d'une API PHP pour la réception des métriques, stockage sécurisé sur base MariaDB et création d'un système d'alerte automatisé lors du franchissement de seuils critiques. Focus sur la fiabilité du réseau local et la sécurisation des flux de données.",
+    tags: ["Linux", "MariaDB", "Cybersécurité"],
+    links: [{ label: "Indisponible", href: "" }],
+    image: iotImg,
+  },
+  {
+    title: "Lab Infrastructure & Automatisation",
+    description:
+      "Conception et déploiement automatisé d'un environnement réseau hybride (Linux / Windows Server). Mise en place d'un domaine Active Directory (GPO, gestion des accès), d'un serveur Web/Database et d'outils d'administration. Intégration de scripts Bash et PowerShell pour l'automatisation des tâches récurrentes (sauvegardes, création d'utilisateurs, mises à jour) et la sécurisation des accès.",
+    tags: ["Linux", "Script Python / Bash", "AD"],
+    links: [{ label: "Indisponible", href: "" }],
+    image: infraImg,
+  },
+  {
     title: "SafeDisk",
     description:
-      "Site vitrine pour un service de récupération de données. Travail sur UI, structure et crédibilité.",
+      "Intégration, sécurisation de l'hébergement et optimisation des performances applicatives.",
     tags: ["WordPress", "UI/UX", "Sécurité"],
     links: [{ label: "Voir le site", href: "https://restoredata.fr" }],
     image: safediskImg,

@@ -46,7 +46,7 @@ export default function App() {
     return () => obs.disconnect();
   }, []);
 
-  // lock scroll quand menu mobile ouvert
+  // Lock scroll quand menu mobile ouvert
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -54,7 +54,7 @@ export default function App() {
     };
   }, [mobileOpen]);
 
-  // fermer au clavier (ESC)
+  // Fermer au clavier (ESC)
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeMobile();
@@ -77,14 +77,14 @@ export default function App() {
       <AnimatedBackground />
       <DecorativeOverlay />
 
-      {/* MOBILE MENU – FULLSCREEN BLOCK (au-dessus de TOUT) */}
+      {/* MOBILE MENU – FULLSCREEN BLOCK */}
       <div
         className={[
           "md:hidden fixed inset-0 z-[9999]",
           mobileOpen ? "pointer-events-auto" : "pointer-events-none",
         ].join(" ")}
       >
-        {/* fond FULL opaque */}
+        {/* Fond FULL opaque */}
         <div
           className={[
             "absolute inset-0 bg-[#07070b] transition-opacity duration-300",
@@ -92,17 +92,16 @@ export default function App() {
           ].join(" ")}
         />
 
-        {/* contenu (menu) */}
+        {/* Contenu (menu) */}
         <div
           className={[
             "absolute inset-0 transition-transform duration-300",
             mobileOpen ? "translate-x-0" : "translate-x-full",
           ].join(" ")}
         >
-          {/* bloc menu (FULL HEIGHT + FULL WIDTH opaque) */}
           <div className="h-full w-full bg-[#0b0b0f]">
             <div className="p-6 flex flex-col h-full">
-              {/* header */}
+              {/* Header */}
               <div className="flex items-center justify-between">
                 <p className="text-sm font-bold text-white/80">Menu</p>
                 <button
@@ -114,7 +113,7 @@ export default function App() {
                 </button>
               </div>
 
-              {/* items */}
+              {/* Items */}
               <div className="mt-6 grid gap-3">
                 <MobileNavItem
                   label="Home"
@@ -155,7 +154,7 @@ export default function App() {
               </div>
 
               <div className="mt-auto pt-6 text-xs text-white/40">
-                © {new Date().getFullYear()} Valentin
+                © {new Date().getFullYear()} Valentin MAREK
               </div>
             </div>
           </div>
@@ -166,10 +165,7 @@ export default function App() {
       <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0b0b0f]/70 backdrop-blur">
         <Container>
           <div className="relative flex items-center py-10">
-            {/* LEFT (logo / vide pour l’instant) */}
-            <div className="flex items-center gap-3">
-              {/* logo plus tard */}
-            </div>
+            <div className="flex items-center gap-3"></div>
 
             {/* CENTER NAV (desktop) */}
             <nav className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-2 backdrop-blur-xl">
@@ -224,7 +220,6 @@ export default function App() {
                   {mobileOpen ? "Fermer" : "Menu"}
                 </span>
 
-                {/* hamburger */}
                 <span className="relative h-4 w-5">
                   <span
                     className={[
@@ -253,36 +248,32 @@ export default function App() {
 
       {/* HERO */}
       <main>
-        {/* marker home */}
         <div id="home" className="h-px scroll-mt-28" />
 
         <Container>
           <section className="py-12 md:py-16">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-              {/* LEFT: big image card */}
+              {/* LEFT: Card Image */}
               <div className="relative">
                 <div className="absolute -inset-4 rounded-[28px] bg-white/5 blur-2xl" />
                 <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 shadow-2xl">
                   <img
                     src={heroImg}
-                    alt="Hero"
+                    alt="Valentin MAREK - Infrastructure & DevOps"
                     className="h-[320px] w-full object-cover md:h-[460px]"
                   />
 
-                  {/* small badge */}
                   <div className="absolute right-4 top-4 rounded-2xl border border-white/15 bg-violet-500/80 px-4 py-3 text-black shadow-lg">
                     <p className="text-center text-xs font-semibold opacity-80">
-                      SITE
+                      LAB & INFRA
                     </p>
                     <p className="text-lg font-black leading-none">À la une</p>
                   </div>
 
-                  {/* bottom bar */}
                   <div className="flex items-center justify-between gap-4 border-t border-white/10 bg-black/30 px-5 py-4">
                     <p className="text-xs text-white/70">
-                      https://restoredata.fr{" "}
-                      <span className="text-violet-300">•</span> Designé &
-                      Developpé par Valentin MAREK
+                      Valentin MAREK{" "}
+                      <span className="text-violet-300">•</span> Admin Systèmes, Réseaux & DevOps
                     </p>
                     <div className="flex items-center gap-2">
                       <SocialDot />
@@ -293,42 +284,35 @@ export default function App() {
                 </div>
               </div>
 
-              {/* RIGHT: text & CTA */}
+              {/* RIGHT: Textes & CTA */}
               <div className="relative">
                 <div className="absolute -top-10 right-0 h-16 w-16 rotate-12 rounded-2xl border border-white/15 bg-indigo-500/20" />
                 <div className="absolute top-24 right-10 h-3 w-3 rounded-full bg-violet-300" />
 
-                <h1
-                  className="mt-2 text-3xl font-black tracking-tight md:text-3xl
-               bg-gradient-to-b from-blue-400 to-fuchsia-600
-               text-transparent bg-clip-text"
-                >
-                  PORTFOLIO
+                <h1 className="mt-2 text-2xl font-black tracking-tight md:text-3xl bg-gradient-to-b from-blue-400 to-fuchsia-600 text-transparent bg-clip-text">
+                  PORTFOLIO SYSTÈMES & RÉSEAUX
                 </h1>
 
-                <h2 className="mt-1 text-xl font-black tracking-tight md:text-xl">
-                  <span className="text-violet-400">React</span> •{" "}
-                  <span className="text-white">TypeScript</span> •
-                  <span className="text-violet-400"> Tailwind</span>
+                <h2 className="mt-1 text-lg font-black tracking-tight md:text-xl">
+                  <span className="text-violet-400">Cybersécurité</span> •{" "}
+                  <span className="text-white">DevOps</span> •{" "}
+                  <span className="text-violet-400">AUTOMATISATION</span>
                 </h2>
 
-                <h1 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
-                  CREER DES EXPERIENCES
+                <h1 className="mt-3 text-3xl font-black tracking-tight md:text-5xl leading-tight">
+                  SÉCURISER L'INFRASTRUCTURE,
                   <br />
-                  WEB{" "}
-                  <span
-                    className="bg-gradient-to-b from-blue-400 to-fuchsia-600
-                 text-transparent bg-clip-text"
-                  >
-                    PROPRES & EFFICACES
+                  AUTOMATISER{" "}
+                  <span className="bg-gradient-to-b from-blue-400 to-fuchsia-600 text-transparent bg-clip-text">
+                    LE DÉPLOIEMENT
                   </span>
                 </h1>
 
-                <p className="mt-5 max-w-xl text-white/70 leading-relaxed">
-                  Étudiant en BTS CIEL. J&apos;apprends à construire et je
-                  construis des projets web concrets (apps
-                  React/TypeScript/Next.js/Node.js & WordPress) avec un focus
-                  UI/UX propre, structure et logique produit.
+                <p className="mt-5 max-w-xl text-white/70 leading-relaxed text-sm md:text-base">
+                  Diplômé d'un BTS CIEL (Informatique et réseaux) et intégrant le
+                  Bachelor Administrateur Système DevOps à l'ISCOD. Passionné par la
+                  défense des infrastructures et l'automatisation, je conçois des labs
+                  sécurisés (Linux, Windows Server, AD) et j'automatise leur gestion.
                 </p>
 
                 <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -355,17 +339,18 @@ export default function App() {
                 </div>
 
                 <p className="mt-6 text-base font-black tracking-tight">
-                  Mes compétences :
+                  Mes compétences clés :
                 </p>
 
-                <div className="mt-3 flex flex-wrap gap-1">
-                  <Tag>React</Tag>
-                  <Tag>Next.js</Tag>
-                  <Tag>Node.js</Tag>
-                  <Tag>TypeScript</Tag>
-                  <Tag>UI/UX</Tag>
-                  <Tag>Tailwind</Tag>
-                  <Tag>Cybersécurité</Tag>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  <Tag>Linux / Windows Server</Tag>
+                  <Tag>Active Directory</Tag>
+                  <Tag>Docker</Tag>
+                  <Tag>CI/CD</Tag>
+                  <Tag>Ansible</Tag>
+                  <Tag>Bash / PowerShell</Tag>
+                  <Tag>Python</Tag>
+                  <Tag>Réseaux IP & LAN</Tag>
                 </div>
               </div>
             </div>
@@ -374,24 +359,14 @@ export default function App() {
           {/* PROJECTS */}
           <div id="projects" className="h-px scroll-mt-28" />
 
-          {/* Wrapper */}
           <div className="relative my-20 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-            {/* Cadre de fond */}
-            <div
-              className="absolute inset-0
-                bg-gradient-to-br
-                from-violet-500/10
-                via-indigo-500/15
-                to-sky-500/12
-                border-y border-white/10
-                backdrop-blur-xl"
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-indigo-500/15 to-sky-500/12 border-y border-white/10 backdrop-blur-xl" />
 
             <div className="relative py-12 md:py-16">
               <Container>
                 <Section
-                  title="Projects"
-                  subtitle="Mes projets principaux (avec résultats concrets)."
+                  title="PROJETS"
+                  subtitle="Labs d'infrastructure, automatisation et réalisations techniques."
                 >
                   <ProjectsCarousel projects={projects} />
                 </Section>
@@ -403,51 +378,53 @@ export default function App() {
           <div id="skills" className="h-px scroll-mt-28" />
           <Section
             title="COMPÉTENCES"
-            subtitle="Technologies et savoir-faire que j’utilise dans mes projets."
+            subtitle="Technologies et savoir-faire appliqués au quotidien."
           >
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 text-center">
-              <SkillCard title="Frontend">
-                <SkillItem>React</SkillItem>
-                <SkillItem>TypeScript</SkillItem>
-                <SkillItem>Tailwind CSS</SkillItem>
-                <SkillItem>HTML</SkillItem>
-                <SkillItem>CSS</SkillItem>
-                <SkillItem>JavaScript</SkillItem>
-              </SkillCard>
-
-              <SkillCard title="Backend & Logique">
-                <SkillItem>Node.js</SkillItem>
-                <SkillItem>APIs REST</SkillItem>
-                <SkillItem>Gestion d’état</SkillItem>
-                <SkillItem>Logique applicative</SkillItem>
-              </SkillCard>
-
-              <SkillCard title="CMS & Web">
-                <SkillItem>WordPress (custom)</SkillItem>
-                <SkillItem>Thèmes & blocs</SkillItem>
-                <SkillItem>Responsive design</SkillItem>
-                <SkillItem>SEO</SkillItem>
-              </SkillCard>
-
-              <SkillCard title="UI / UX">
-                <SkillItem>Design moderne</SkillItem>
-                <SkillItem>Hiérarchie visuelle</SkillItem>
-                <SkillItem>Micro-interactions</SkillItem>
-                <SkillItem>Expérience utilisateur</SkillItem>
-              </SkillCard>
-
-              <SkillCard title="Outils">
-                <SkillItem>Git / GitHub</SkillItem>
-                <SkillItem>VS Code</SkillItem>
-                <SkillItem>Figma (bases)</SkillItem>
-                <SkillItem>Debug / DevTools</SkillItem>
-              </SkillCard>
-
               <SkillCard title="Cybersécurité (BTS CIEL)">
                 <SkillItem>Bases sécurité réseau</SkillItem>
-                <SkillItem>Bonnes pratiques</SkillItem>
+                <SkillItem>Durcissement (Hardening)</SkillItem>
+                <SkillItem>Gestion des accès & droits</SkillItem>
+                <SkillItem>Gestion des vulnérabilités</SkillItem>
                 <SkillItem>Sensibilisation risques</SkillItem>
-                <SkillItem>Approche méthodique</SkillItem>
+              </SkillCard>
+
+              <SkillCard title="Infrastructures & Réseaux">
+                <SkillItem>Linux (Debian/Ubuntu)</SkillItem>
+                <SkillItem>Windows Server</SkillItem>
+                <SkillItem>Active Directory / GPO</SkillItem>
+                <SkillItem>Architecture LAN / Wi-Fi</SkillItem>
+                <SkillItem>Virtualisation (VMware/VirtualBox)</SkillItem>
+                <SkillItem>Routage & Commutation IP</SkillItem>
+              </SkillCard>
+
+              <SkillCard title="DevOps & Automatisation">
+                <SkillItem>Docker & Conteneurs</SkillItem>
+                <SkillItem>Pipelines CI/CD</SkillItem>
+                <SkillItem>Ansible</SkillItem>
+                <SkillItem>Git / GitHub</SkillItem>
+                <SkillItem>Supervision & Alerting</SkillItem>
+              </SkillCard>
+
+              <SkillCard title="Scripting & Databases">
+                <SkillItem>Bash</SkillItem>
+                <SkillItem>PowerShell</SkillItem>
+                <SkillItem>Python</SkillItem>
+                <SkillItem>SQL (MySQL / MariaDB)</SkillItem>
+              </SkillCard>
+
+              <SkillCard title="Support & Outillage">
+                <SkillItem>GLPI (Ticketing)</SkillItem>
+                <SkillItem>Jira / Méthode Agile</SkillItem>
+                <SkillItem>VS Code</SkillItem>
+                <SkillItem>Documentation technique</SkillItem>
+              </SkillCard>
+
+              <SkillCard title="Développement & Web (Bases)">
+                <SkillItem>APIs REST (PHP / Node.js)</SkillItem>
+                <SkillItem>HTML / CSS / JavaScript</SkillItem>
+                <SkillItem>React / TypeScript</SkillItem>
+                <SkillItem>WordPress (customisation)</SkillItem>
               </SkillCard>
             </div>
           </Section>
@@ -456,27 +433,19 @@ export default function App() {
           <div id="faq" className="h-px scroll-mt-28" />
 
           <div className="relative mt-20 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-            <div
-              className="absolute inset-0
-      bg-gradient-to-br
-      from-sky-500/30
-      via-indigo-500/15
-      to-fuchsia-500/40
-      border-y border-white/10
-      backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/30 via-indigo-500/15 to-fuchsia-500/40 border-y border-white/10 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.02)]" />
 
-            <div className="relative">
+            <div className="relative py-12">
               <Container>
-                <Section title="FAQs" subtitle="Pour un recruteur.">
-                  <div className="grid gap-3 md:grid-cols-2">
+                <Section title="FAQS" subtitle="Pour les recruteurs et responsables d'équipe.">
+                  <div className="grid gap-4 md:grid-cols-2">
                     <Faq
-                      q="Tu cherches quoi ?"
-                      a="Une alternance / formation Bachelor Full-Stack, et des projets concrets pour progresser."
+                      q="Que recherches-tu ?"
+                      a="Une alternance en tant qu'Administrateur Systèmes & Réseaux / DevSecOps pour accompagner mon Bachelor à l'ISCOD dès septembre 2026 (rythme 4j entreprise / 1j école)."
                     />
                     <Faq
-                      q="Ton point fort ?"
-                      a="Ma motivation, les projets réels, sens du détail UI, et approche “produit”."
+                      q="Quels sont tes points forts ?"
+                      a="Rigueur méthodique, polyvalence entre le réseau physique et l'automatisation par script, et forte capacité d'apprentissage en autonomie."
                     />
                   </div>
                 </Section>
@@ -484,32 +453,17 @@ export default function App() {
             </div>
           </div>
 
-          {/* FULL WIDTH DIVIDER */}
+          {/* DIVIDER */}
           <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
             <div className="absolute inset-0 border-y border-white/10" />
 
-            <div
-              className="absolute inset-0
-      bg-[radial-gradient(900px_260px_at_20%_50%,rgba(59,130,246,0.18),transparent_65%),radial-gradient(900px_260px_at_80%_50%,rgba(168,85,247,0.18),transparent_65%),linear-gradient(to_bottom,rgba(255,255,255,0.04),rgba(0,0,0,0.12))]
-      backdrop-blur-xl"
-            />
-
-            <div className="absolute inset-0 opacity-[0.35] [mask-image:linear-gradient(to_right,transparent,black,transparent)]">
-              <div className="absolute -inset-[60%] rotate-12 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.14)_0px,rgba(255,255,255,0.14)_1px,transparent_1px,transparent_16px)]" />
-            </div>
-
-            <div className="pointer-events-none absolute -left-10 top-1/2 -translate-y-1/2 h-28 w-28 rounded-full bg-sky-400/20 blur-2xl" />
-            <div className="pointer-events-none absolute -right-10 top-1/2 -translate-y-1/2 h-28 w-28 rounded-full bg-fuchsia-500/20 blur-2xl" />
-            <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-40 w-40 rounded-[32px] rotate-12 border border-white/10 bg-white/5 blur-[0px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(900px_260px_at_20%_50%,rgba(59,130,246,0.18),transparent_65%),radial-gradient(900px_260px_at_80%_50%,rgba(168,85,247,0.18),transparent_65%),linear-gradient(to_bottom,rgba(255,255,255,0.04),rgba(0,0,0,0.12))] backdrop-blur-xl" />
 
             <div className="relative py-10">
               <Container>
                 <div className="flex items-center gap-4">
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-                  <span
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.22em]
-            text-white/70 backdrop-blur-xl"
-                  >
+                  <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-white/70 backdrop-blur-xl">
                     PORTFOLIO
                   </span>
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
@@ -522,23 +476,16 @@ export default function App() {
           <div id="contact" className="h-px scroll-mt-28" />
 
           <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-            <div
-              className="absolute inset-0
-      bg-gradient-to-br
-      from-sky-500/30
-      via-indigo-500/15
-      to-fuchsia-500/40
-      border-y border-white/10
-      backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/30 via-indigo-500/15 to-fuchsia-500/40 border-y border-white/10 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.02)]" />
 
-            <div className="relative">
+            <div className="relative py-12">
               <Container>
-                <Section title="Contact" subtitle="Simple et direct.">
+                <Section title="Contact" subtitle="Echangeons sur vos besoins.">
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div className="grid gap-3 md:grid-cols-2 text-sm">
-                      <ContactRow label="Email" value="flowitfb@gmail.com" />
-                      <ContactRow label="Tél" value="06 62 73 77 10" />
+                    <div className="grid gap-3 md:grid-cols-3 text-sm">
+                      <ContactRow label="Email" value="valentinmarek2@gmail.com" />
+                      <ContactRow label="Téléphone" value="06 62 73 77 10" />
+                      <ContactRow label="Linkedin" value="Valentin MAREK" />
                     </div>
                   </div>
                 </Section>
@@ -550,13 +497,13 @@ export default function App() {
           <div id="timeline" className="h-px scroll-mt-28" />
           <Section
             title="Parcours"
-            subtitle="Mon parcours scolaire + projets clés."
+            subtitle="Formation académique et étapes clés."
           >
             <Timeline />
           </Section>
 
           <footer className="py-10 text-center text-xs text-white/50">
-            © {new Date().getFullYear()} Valentin — Portfolio
+            © {new Date().getFullYear()} Valentin MAREK — Portfolio Infrastructure & DevOps
           </footer>
         </Container>
       </main>
@@ -657,16 +604,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 function Faq({ q, a }: { q: string; a: string }) {
   return (
-    <div
-      className="rounded-2xl
-        border border-purple-400/80
-        bg-gradient-to-br
-        from-fuchsia-400/15
-        via-white/10
-        to-sky-400/25
-        backdrop-blur-xl
-        p-5"
-    >
+    <div className="rounded-2xl border border-purple-400/80 bg-gradient-to-br from-fuchsia-400/15 via-white/10 to-sky-400/25 backdrop-blur-xl p-5">
       <p className="font-semibold">{q}</p>
       <p className="mt-2 text-sm text-white/70">{a}</p>
     </div>
@@ -675,18 +613,7 @@ function Faq({ q, a }: { q: string; a: string }) {
 
 function ContactRow({ label, value }: { label: string; value: string }) {
   return (
-    <div
-      className="
-        rounded-2xl
-        border border-violet-400/80
-        bg-gradient-to-br
-        from-violet-500/15
-        via-indigo-500/10
-        to-sky-500/15
-        backdrop-blur-xl
-        p-5
-      "
-    >
+    <div className="rounded-2xl border border-violet-400/80 bg-gradient-to-br from-violet-500/15 via-indigo-500/10 to-sky-500/15 backdrop-blur-xl p-5">
       <p className="text-xs text-white/60">{label}</p>
       <p className="mt-1 font-semibold text-white">{value}</p>
     </div>
@@ -701,22 +628,11 @@ function SkillCard({
   children: React.ReactNode;
 }) {
   return (
-    <div
-      className="
-        rounded-2xl
-        border border-white/10
-        bg-gradient-to-br
-        from-violet-500/15
-        via-indigo-500/10
-        to-sky-500/15
-        backdrop-blur-xl
-        p-6
-      "
-    >
+    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-violet-500/15 via-indigo-500/10 to-sky-500/15 backdrop-blur-xl p-6">
       <h3 className="text-lg font-black tracking-tight mb-4 text-white/90">
         {title}
       </h3>
-      <div className="justify-center flex flex-wrap gap-2 ">{children}</div>
+      <div className="justify-center flex flex-wrap gap-2">{children}</div>
     </div>
   );
 }
@@ -734,32 +650,32 @@ function Timeline() {
     {
       date: "2024",
       title: "Baccalauréat Général (SVT, SES)",
-      desc: "Bac général, spécialité SVT et SES.",
+      desc: "Obtention du Baccalauréat Général.",
       tags: ["SVT", "SES", "Maths", "Anglais"],
     },
     {
       date: "2024 — 2026",
       title: "BTS CIEL (Cybersécurité, Informatique & Réseaux)",
-      desc: "Formation orientée réseaux, systèmes, cybersécurité + projets techniques. Objectif : devenir développeur full-stack orienté produit/UI.",
-      tags: ["Réseaux", "Cybersécurité", "Projets", "Méthode"],
+      desc: "Formation axée sur l'administration réseau, la cybersécurité, les systèmes d'exploitation et la maintenance d'infrastructures informatiques.",
+      tags: ["Réseaux", "Cybersécurité", "Active Directory", "Linux"],
     },
     {
       date: "2025",
-      title: "Stage / Projets Web (WordPress & HTML/CSS/JS)",
-      desc: "Réalisation de sites concrets : SafeDisk, Le Frank, J’ai Piscine Avec Simone. Focus : UI propre, responsive, contenu, structure, respect des demandes du client et livrable pro.",
-      tags: ["WordPress", "UI/UX", "Responsive", "Client"],
+      title: "Stage & Automatisation Web (DIMYX)",
+      desc: "Automatisation du déploiement de sites web via des environnements standardisés et optimisation d'infrastructures applicatives.",
+      tags: ["Déploiement", "Scripts", "Bases de données", "Clients"],
     },
     {
       date: "2025 — 2026",
-      title: "Montée en compétences Front (React / TypeScript / Tailwind)",
-      desc: "Création de ce portfolio + projets React. Structuration du code, composants réutilisables, design premium, animations légères.",
-      tags: ["React", "TypeScript", "Tailwind", "Portfolio"],
+      title: "Projets Infra & Labs d'Automatisation",
+      desc: "Conception de labs sous Linux/Windows Server, automatisation par scripts Bash/PowerShell et déploiement de systèmes de supervision.",
+      tags: ["Labs", "Scripting", "Docker", "Monitoring"],
     },
     {
-      date: "Objectif 2026",
-      title: "Bachelor Développeur Full-Stack",
-      desc: "Approfondir Next.js, backend (Node.js), APIs, base de données, déploiement. Construire des apps complètes et monétisables.",
-      tags: ["Next.js", "Node.js", "API", "DB"],
+      date: "Rentrée 2026",
+      title: "Bachelor Administrateur Système DevOps (ISCOD)",
+      desc: "Spécialisation en gestion d'infrastructures Cloud, conteneurisation, automatisation CI/CD et sécurité opérationnelle en alternance.",
+      tags: ["DevOps", "Docker", "CI/CD", "Cloud", "Ansible"],
     },
   ];
 
@@ -773,11 +689,7 @@ function Timeline() {
               <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-sky-400 via-indigo-400 to-fuchsia-500" />
             </div>
 
-            <div
-              className="rounded-2xl border border-white/10
-              bg-gradient-to-br from-violet-500/15 via-indigo-500/10 to-sky-500/15
-              backdrop-blur-xl p-6"
-            >
+            <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-violet-500/15 via-indigo-500/10 to-sky-500/15 backdrop-blur-xl p-6">
               <p className="text-xs text-white/60">{it.date}</p>
               <h3 className="mt-2 text-lg md:text-xl font-black tracking-tight">
                 {it.title}
